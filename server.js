@@ -2,13 +2,12 @@
 //node modules
 const express = require('express');
 const hbs = require('hbs');
-
-
-//declare node modules
-var app = express();
 const fs = require('fs');
+var app = express();
+ 
 
 
+const port= process.env.PORT || 3000;
 
 //middleware
 hbs.registerPartials(__dirname + '/views/partials');
@@ -78,8 +77,8 @@ app.get('/bad', (req, res) =>{
 });
 
 
-app.listen(3000, () => {
-    console.log('server is up on port 3000');
+app.listen(port, () => {
+    console.log(`server is up on port ${port}`);
 })
 
 
